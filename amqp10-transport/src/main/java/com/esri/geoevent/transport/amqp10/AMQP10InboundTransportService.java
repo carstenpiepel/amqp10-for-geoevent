@@ -22,8 +22,19 @@
   email: contracts@esri.com
 */
 
-package com.esri.geoevent.transport.activemq;
+package com.esri.geoevent.transport.amqp10;
 
-public enum ActiveMQDestinationType {
-  Queue, Topic
+import com.esri.ges.core.component.ComponentException;
+import com.esri.ges.transport.Transport;
+import com.esri.ges.transport.TransportServiceBase;
+
+public class AMQP10InboundTransportService extends TransportServiceBase {
+  public AMQP10InboundTransportService() {
+    definition = new AMQP10InboundTransportDefinition();
+  }
+
+  @Override
+  public Transport createTransport() throws ComponentException {
+    return new AMQP10InboundTransport(definition);
+  }
 }

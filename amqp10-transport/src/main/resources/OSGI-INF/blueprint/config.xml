@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  <bean id="amqp10InboundTransportServiceBean" class="com.esri.geoevent.transport.amqp10.AMQP10InboundTransportService" activation="eager">
+    <property name="bundleContext" ref="blueprintBundleContext"/>
+  </bean>
+  <service id="amqp10InboundTransportService" ref="amqp10InboundTransportServiceBean" interface="com.esri.ges.transport.TransportService"/>
+</blueprint>

@@ -1,8 +1,6 @@
-# activemq-for-geoevent
+# amqp10-for-geoevent
 
 ArcGIS GeoEvent Server sample ActiveMQ connectors for connecting to ActiveMQ Message Servers.
-
-![App](activemq-for-geoevent.png?raw=true)
 
 ## Features
 * ActiveMQ Inbound Transport

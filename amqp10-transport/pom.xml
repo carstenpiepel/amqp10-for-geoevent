@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.esri.geoevent.parent</groupId>
-    <artifactId>activemq</artifactId>
-    <version>10.4.1</version>
+    <artifactId>amqp10</artifactId>
+    <version>10.8.1</version>
   </parent>
   <groupId>com.esri.geoevent.transport</groupId>
-  <artifactId>activemq-transport</artifactId>
-  <name>Esri :: GeoEvent :: Transport :: ActiveMQ</name>
+  <artifactId>amqp10-transport</artifactId>
+  <name>Esri :: GeoEvent :: Transport :: AMQP 1.0</name>
   <packaging>bundle</packaging>
 
   <build>
@@ -23,7 +23,7 @@
             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
             <Bundle-ContactAddress>${contact.address}</Bundle-ContactAddress>
             <Bundle-Version>${project.version}</Bundle-Version>
-            <Private-Package>com.esri.geoevent.transport.activemq</Private-Package>
+            <Private-Package>com.esri.geoevent.transport.amqp10</Private-Package>
             <Import-Package>
               com.esri.ges.*,
               *;resolution:=optional

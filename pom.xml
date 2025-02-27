@@ -14,7 +14,7 @@
   <scm>
     <connection>scm:git:${project.scm.url}</connection>
     <developerConnection>scm:git:${project.scm.url}</developerConnection>
-    <url>https://github.com/carstenpiepel/amqp10-for-geoevent.git</url>
+    <url>git@github.com:carstenpiepel/amqp10-for-geoevent.git</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -90,6 +90,7 @@
           <version>${maven.release.plugin.version}</version>
           <configuration>
             <scmCommentPrefix>[ci skip]</scmCommentPrefix>
+            <tagNameFormat>@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
       </plugins>

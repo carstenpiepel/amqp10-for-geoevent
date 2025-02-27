@@ -5,7 +5,7 @@
 
   <groupId>com.esri.geoevent.parent</groupId>
   <artifactId>amqp10</artifactId>
-  <version>10.9.1</version>
+  <version>10.9.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Esri :: GeoEvent :: AMQP 1.0</name>

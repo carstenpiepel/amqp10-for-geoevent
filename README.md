@@ -1,10 +1,13 @@
 # amqp10-for-geoevent
 
-ArcGIS GeoEvent Server sample ActiveMQ connectors for connecting to ActiveMQ Message Servers.
+The AMPQ 1.0 Inbound Transport for ArcGIS GeoEvent Server connects GeoEvent Server with message brokers that are 
+compliant with the AMQP 1.0 protocol. This transport has been tested with Azure 
+Service Bus but it may also work with other message brokers including RabbitMQ 4.x, Azure Service Bus, ActiveMQ, and 
+SwiftMQ. The transport uses the [SwiftMQ AMQP 1.0 Java Client](https://docs.swiftmq.com/sc/amqp-1-0-client) to connect 
+to brokers. 
 
 ## Features
-* ActiveMQ Inbound Transport
-* ActiveMQ Outbound Transport
+* AMQP 1.0 Inbound Transport
 
 ## Instructions
 
@@ -21,15 +24,12 @@ Installing the built jar files:
 
 * ArcGIS GeoEvent Server.
 * ArcGIS GeoEvent Server SDK.
-* Java JDK 1.8 or later.
+* Java JDK 11 or later (the SwiftMQ client does not work with JDK 1.8).
 * Maven 4.0 or later.
 
-## Resources
+## Other Resources
 
-* [Download the connector's tutorial](https://www.arcgis.com/home/item.html?id=40507af01cb5437196ee27064479aa38) from the ArcGIS GeoEvent Server Gallery
 * [ArcGIS GeoEvent Server Resources](http://links.esri.com/geoevent)
-* [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
-* [twitter@esri](http://twitter.com/esri)
 
 ## Issues
 
@@ -40,7 +40,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
-Copyright 2013 Esri
+Copyright 2025 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

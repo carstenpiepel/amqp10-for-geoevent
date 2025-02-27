@@ -5,16 +5,26 @@
 
   <groupId>com.esri.geoevent.parent</groupId>
   <artifactId>amqp10</artifactId>
-  <version>10.8.1</version>
+  <version>10.9.1</version>
   <packaging>pom</packaging>
 
   <name>Esri :: GeoEvent :: AMQP 1.0</name>
   <url>http://www.esri.com</url>
 
+  <scm>
+    <connection>scm:git:${project.scm.url}</connection>
+    <developerConnection>scm:git:${project.scm.url}</developerConnection>
+    <url>https://github.com/carstenpiepel/amqp10-for-geoevent.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <properties>
     <contact.address>cpiepel@esri.com</contact.address>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
+    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+    <maven.release.plugin.version>3.1.1</maven.release.plugin.version>
+
     <swiftmq-client.version>12.3.0</swiftmq-client.version>
   </properties>
   
@@ -22,10 +32,10 @@
     <profile>
       <id>cross-compile-from-later-jdk</id>
       <activation>
-        <jdk>[9,)</jdk>
+        <jdk>[12,)</jdk>
       </activation>
       <properties>
-        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.release>11</maven.compiler.release>
       </properties>
     </profile>
   </profiles>
@@ -48,7 +58,7 @@
     <dependency>
       <groupId>com.esri.geoevent.sdk</groupId>
       <artifactId>geoevent-sdk</artifactId>
-      <version>10.8.1</version>
+      <version>10.9.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -69,10 +79,17 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
+          <version>${maven.compiler.plugin.version}</version>
           <configuration>
             <source>11</source>
             <target>11</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven.release.plugin.version}</version>
+          <configuration>
+            <scmCommentPrefix>[ci skip]</scmCommentPrefix>
           </configuration>
         </plugin>
       </plugins>

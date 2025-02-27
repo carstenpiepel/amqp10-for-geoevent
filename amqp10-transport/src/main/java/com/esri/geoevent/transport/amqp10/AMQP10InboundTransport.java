@@ -68,7 +68,10 @@ public class AMQP10InboundTransport extends InboundTransportBase {
 
     @Override
     public void afterPropertiesSet() {
+        super.afterPropertiesSet();
+
         doStop();
+
         String password;
         try {
             password = getProperty("password").getDecryptedValue();
@@ -89,8 +92,6 @@ public class AMQP10InboundTransport extends InboundTransportBase {
         String destinationName = getProperty("destinationName").getValueAsString();
 
         destinationInfo = new AMQP10DestinationInfo(destinationType, destinationName);
-
-        super.afterPropertiesSet();
     }
 
     @Override
@@ -130,17 +131,17 @@ public class AMQP10InboundTransport extends InboundTransportBase {
     private synchronized void doStop(String reason) {
         setRunningState(RunningState.STOPPING);
         setErrorMessage(reason);
-        if (connectionService != null)
-            try {
-                connectionService.stop();
-            } finally {
-                connectionService = null;
-            }
         if (consumerService != null)
             try {
                 consumerService.stop();
             } finally {
                 consumerService = null;
+            }
+        if (connectionService != null)
+            try {
+                connectionService.stop();
+            } finally {
+                connectionService = null;
             }
         setRunningState(RunningState.STOPPED);
     }

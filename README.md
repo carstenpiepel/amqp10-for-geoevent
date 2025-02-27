@@ -48,9 +48,9 @@ To deploy the transport and configure an input connector that uses the transport
     * Adapter: `GeoJSON`
     * Transport: `AMQP-1_0`
     * Default Input Name: `amqp10-geojson-in`
-    * Shown Properties: List all Properties
+    * Shown Properties: List all properties except for "Use TLS/SSL"
     * Advanced Properties: None
-    * Hidden Properties: None
+    * Hidden Properties: "Use TLS/SSL"
 7. Click on "Create". This will create the input connector.
 
 ![Create the AMQP 1.0 Inbound Connector](/assets/images/create_connector.png)

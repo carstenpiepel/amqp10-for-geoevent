@@ -19,7 +19,7 @@ jobs:
           distribution: 'adopt'
           cache: 'maven'
       - run: mvn clean install -DskipTests
-      - run: mkdir staging && cp target/*.jar staging
+      - run: mkdir staging && cp amqp10-transport/target/*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package

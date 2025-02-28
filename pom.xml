@@ -4,7 +4,7 @@
 
   <groupId>com.esri.geoevent.parent</groupId>
   <artifactId>amqp10</artifactId>
-  <version>10.9.3-SNAPSHOT</version>
+  <version>10.9.1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Esri :: GeoEvent :: AMQP 1.0</name>
@@ -23,7 +23,7 @@
     <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
     <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
     <maven.release.plugin.version>3.1.1</maven.release.plugin.version>
-
+    <buildnumber.maven.plugin.version>3.2.1</buildnumber.maven.plugin.version>
     <swiftmq-client.version>12.3.0</swiftmq-client.version>
   </properties>
   
@@ -92,7 +92,37 @@
             <tagNameFormat>@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>buildnumber-maven-plugin</artifactId>
+          <version>${buildnumber.maven.plugin.version}</version>
+          <executions>
+            <execution>
+              <id>buildnumber-create</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>create</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>buildnumber-create-metadata</id>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>create-metadata</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <doCheck>true</doCheck>
+            <doUpdate>true</doUpdate>
+            <attach>true</attach>
+            <addOutputDirectoryToResources>true</addOutputDirectoryToResources>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
+
+    <!--<finalName>$\{project.artifactId}-$\{project.version}-r$\{buildNumber}</finalName>-->
+
   </build>
 </project>

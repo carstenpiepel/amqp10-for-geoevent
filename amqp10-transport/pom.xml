@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.esri.geoevent.parent</groupId>
     <artifactId>amqp10</artifactId>
-    <version>10.9.3-SNAPSHOT</version>
+    <version>10.9.1.1-SNAPSHOT</version>
   </parent>
   <groupId>com.esri.geoevent.transport</groupId>
   <artifactId>amqp10-transport</artifactId>

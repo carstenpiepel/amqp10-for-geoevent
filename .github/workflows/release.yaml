@@ -1,9 +1,9 @@
 name: Java CI to create and upload release on pull request
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 env:
   build-number: ${GITHUB_RUN_NUMBER}
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'temurin'
+          distribution: 'adopt'
           cache: 'maven'
       - run: mvn clean package -DskipTests
       - run: mkdir staging && cp target/*.jar staging
